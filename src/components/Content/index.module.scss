@@ -1,0 +1,28 @@
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  &.overstory {
+    justify-content: flex-start;
+    padding-left: 15px;
+    &::before {
+      content: none;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+    background: url('../../assets/images/back.png') no-repeat center;
+    background-size: 24px;
+  }
+  &-logo {
+    width: 128px;
+    height: 24px;
+  }
+}
