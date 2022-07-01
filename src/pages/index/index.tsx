@@ -48,9 +48,9 @@ const Home = () => {
   };
 
   return (
-    <Content showNav={false} style={{ background: '#5AD79D' }}>
-      <div style={{ background: '#f5f5f5', height: '100%' }}>
-        <div className={styles['logo']} style={{ background: '#5AD79D' }}>
+    <Content showNav={false} navStyle={{ backgroundColor: '#5ad79d' }}>
+      <div style={{ background: '#f5f5f5', minHeight: '100vh' }}>
+        <div className={styles['logo']}>
           <img className={styles['logo-img']} src={require('assets/images/logo-white.png')} />
         </div>
         <div className={styles['banner']}>

@@ -1,15 +1,39 @@
 import classnames from 'classnames';
 import { Content } from 'components';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Taro from '@tarojs/taro';
 import { Button, Form, Input, Label, Textarea } from '@tarojs/components';
+import { fillTwoNum } from 'utils';
 import styles from './index.module.scss';
 
 const tabs = [{ title: '雕玉成才' }, { title: '赤诚惜才' }, { title: '礼贤悦才' }, { title: '海川纳才' }];
 const contributed = [{ key: '2' }, { key: '1' }];
 
+var endTime = new Date('2022/08/01 12:00:00');
 const User = () => {
   const [formValue, setFormValue] = useState({ type: 0, internOnly: false });
+
+  const timer = useRef<any>(null);
+  const [time, setTime] = useState({ h: '99', m: '99', s: '99' });
+
+  useEffect(() => {
+    timer.current = setInterval(() => {
+      const now = new Date();
+      var diff = Math.ceil((endTime.getTime() - now.getTime()) / 1000);
+      // var d = Math.floor(diff / 86400);
+      // diff -= d * 86400;
+      var h = Math.floor(diff / 3600);
+      diff -= h * 3600;
+      var m = Math.floor(diff / 60);
+      diff -= m * 60;
+      var s = diff % 60;
+      setTime({ h: fillTwoNum(h), m: fillTwoNum(m), s: fillTwoNum(s) });
+    }, 500);
+
+    return () => {
+      clearInterval(timer.current);
+    };
+  }, []);
 
   const onEdit = () => {
     Taro.navigateTo({ url: '/pages/index/detail/index?type=1&source=user' });
@@ -29,7 +53,9 @@ const User = () => {
         <p className={styles['introduce-desc']}>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         <div className={styles['introduce-countdown']}>
           <div>距离活动结束还有</div>
-          <div className={styles['introduce-countdown-time']}>61:03:39</div>
+          <div className={styles['introduce-countdown-time']}>
+            {time.h}:{time.m}:{time.s}
+          </div>
         </div>
       </div>
       <div className={styles['contributed']}>

@@ -1,5 +1,6 @@
 import { Button, Image } from '@tarojs/components';
 import Taro from '@tarojs/taro';
+import classnames from 'classnames';
 import { Content } from 'components';
 import { useEffect, useMemo, useState } from 'react';
 import styles from './index.module.scss';
@@ -12,16 +13,6 @@ const Detail = () => {
   const onTap = () => {
     Taro.navigateBack();
   };
-
-  const typeImg = useMemo(() => {
-    const config = {
-      1: require('assets/images/type1.png'),
-      2: require('assets/images/type2.png'),
-      3: require('assets/images/type3.png'),
-      4: require('assets/images/type4.png'),
-    };
-    return config[pageType];
-  }, [pageType]);
 
   const btnList = useMemo(() => {
     if (source === 'list') {
@@ -74,8 +65,7 @@ const Detail = () => {
   return (
     <Content showNav={false} className={styles['detail']} navStyle={{ backgroundColor: '#000' }}>
       <div className={styles['detail-works']}>
-        <div className={styles['detail-works-desc']}>
-          <img className={styles['detail-works-desc-img']} src={typeImg} alt='' />
+        <div className={classnames(styles['detail-works-desc'], styles[`type-${pageType}`])}>
           {source === 'list' && (
             <Button
               className={styles['detail-works-desc-btn']}

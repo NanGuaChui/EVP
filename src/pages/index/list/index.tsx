@@ -1,9 +1,10 @@
 import Taro from '@tarojs/taro';
 import { Content } from 'components';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
+import classnames from 'classnames';
 import styles from './index.module.scss';
 
-const data = [{ key: 1 }, { key: 2 }, { key: 3 }, { key: 4 }, { key: 5 }, { key: 6 }, { key: 7 }, { key: 8 }];
+const data = [{ key: 1 }, { key: 2 }, { key: 3 }, { key: 4 }];
 
 const List = () => {
   const [pageType, setPageType] = useState(0);
@@ -19,19 +20,9 @@ const List = () => {
     }
   }, []);
 
-  const bg = useMemo(() => {
-    const config = {
-      1: require('assets/images/detail-top-bg-1.png'),
-      2: require('assets/images/detail-top-bg-2.png'),
-      3: require('assets/images/detail-top-bg-3.png'),
-      4: require('assets/images/detail-top-bg-4.png'),
-    };
-    return config[pageType] && `url(${config[pageType]})`;
-  }, [pageType]);
-
   return (
     <Content showTabBar>
-      <div className={styles['desc']} style={{ backgroundImage: bg }}>
+      <div className={classnames(styles['desc'], styles[`desc-type-${pageType}`])}>
         <div className={styles['desc-bg']}>
           巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
         </div>
@@ -46,6 +37,11 @@ const List = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className={styles['d-buzz']}>德勤出版物《勤报圈D.BUZZ》</div>
+      <div className={styles['info']}>
+        <span>微信公众号：德勤招聘</span>
+        <span>小D勤报局</span>
       </div>
     </Content>
   );

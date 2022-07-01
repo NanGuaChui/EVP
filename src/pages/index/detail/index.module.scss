@@ -37,10 +37,23 @@
       right: 0;
       z-index: 999;
       top: 75px;
-      padding: 12px 18px;
-      background-color: rgba(85, 85, 85, 0.5);
-      &-img {
-        width: 132px;
+      padding: 54px 18px 12px 18px;
+      width: 168px;
+      &.type-1 {
+        background: url(../../../assets/images/type1.png) rgba(85, 85, 85, 0.5) no-repeat top 8px center;
+        background-size: 132px 42px;
+      }
+      &.type-2 {
+        background: url(../../../assets/images/type2.png) rgba(85, 85, 85, 0.5) no-repeat top 8px center;
+        background-size: 132px 42px;
+      }
+      &.type-3 {
+        background: url(../../../assets/images/type3.png) rgba(85, 85, 85, 0.5) no-repeat top 8px center;
+        background-size: 132px 42px;
+      }
+      &.type-4 {
+        background: url(../../../assets/images/type4.png) rgba(85, 85, 85, 0.5) no-repeat top 8px center;
+        background-size: 132px 42px;
       }
       &-btn {
         border-radius: 14px;
