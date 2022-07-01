@@ -5,7 +5,6 @@ export default defineAppConfig({
     'pages/index/detail/index',
     'pages/index/rankings/index',
     'pages/user/index',
-    'pages/user/detail/index',
   ],
   window: {
     navigationStyle: 'custom',
@@ -16,6 +15,7 @@ export default defineAppConfig({
   tabBar: {
     color: '#3E4248',
     backgroundColor: '#fff',
+    selectedColor: '#85bc27',
     list: [
       {
         text: '首页',

@@ -9,7 +9,7 @@ const List = () => {
   const [pageType, setPageType] = useState(0);
 
   const onDetail = () => {
-    Taro.navigateTo({ url: '/pages/index/detail/index' });
+    Taro.navigateTo({ url: `/pages/index/detail/index?type=${pageType}` });
   };
 
   useEffect(() => {

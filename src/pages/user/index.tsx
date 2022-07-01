@@ -12,7 +12,7 @@ const User = () => {
   const [formValue, setFormValue] = useState({ type: 0, internOnly: false });
 
   const onEdit = () => {
-    Taro.navigateTo({ url: '/pages/user/detail/index' });
+    Taro.navigateTo({ url: '/pages/index/detail/index?type=1&source=user' });
   };
 
   return (

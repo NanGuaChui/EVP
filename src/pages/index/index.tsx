@@ -49,11 +49,14 @@ const Home = () => {
 
   return (
     <Content showNav={false}>
-      <div className={styles['logo']}>
-        <img className={styles['logo-img']} src={require('assets/images/logo.png')} />
+      <div className={styles['logo']} style={{ background: '#5AD79D' }}>
+        <img className={styles['logo-img']} src={require('assets/images/logo-white.png')} />
       </div>
       <div className={styles['banner']}>
-        <div className={styles['banner-bg']}></div>
+        <div className={styles['banner-bg']}>
+          <p>德育人才</p>
+          <p style={{ textAlign: 'center' }}>勤创未来</p>
+        </div>
         <div className={styles['language']}>
           <div className={styles['language-dot']} style={{ left: languageDot }}></div>
           <span
@@ -80,15 +83,19 @@ const Home = () => {
       <div className={styles['list']}>
         <div className={styles['item']} onClick={() => onDetail(1)}>
           <img className={styles['img']} src={require('assets/images/module-1.png')} alt='' />
+          <div className={styles['text']}>立即进入&gt;</div>
         </div>
         <div className={styles['item']} onClick={() => onDetail(2)}>
           <img className={styles['img']} src={require('assets/images/module-2.png')} alt='' />
+          <div className={styles['text']}>立即进入&gt;</div>
         </div>
         <div className={styles['item']} onClick={() => onDetail(3)}>
           <img className={styles['img']} src={require('assets/images/module-3.png')} alt='' />
+          <div className={styles['text']}>立即进入&gt;</div>
         </div>
         <div className={styles['item']} onClick={() => onDetail(4)}>
           <img className={styles['img']} src={require('assets/images/module-4.png')} alt='' />
+          <div className={styles['text']}>立即进入&gt;</div>
         </div>
       </div>
     </Content>
