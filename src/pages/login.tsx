@@ -2,24 +2,26 @@ import { Content } from 'components';
 import classnames from 'classnames';
 import { Button, Form, Input } from '@tarojs/components';
 import Taro from '@tarojs/taro';
+import { delay } from 'utils';
 import styles from './login.module.scss';
 
-console.log(styles);
-
 const Login = () => {
-  const onWechatLogin = res => {
+  const onWechatLogin = async res => {
     const userInfo = res?.detail?.userInfo;
-    console.log(userInfo);
+    console.log(`userInfo----------------${userInfo}`);
     if (userInfo) {
       Taro.showToast({ title: userInfo.nickName });
-      Taro.redirectTo({ url: '/pages/index/index' });
+      await delay(2000);
+      Taro.switchTab({ url: '/pages/index/index' });
     } else {
       Taro.showToast({ title: '获取用户信息失败' });
     }
   };
 
-  const onDeloitteLogin = () => {
-    Taro.redirectTo({ url: '/pages/index/index' });
+  const onDeloitteLogin = async () => {
+    Taro.showToast({ title: '登陆成功' });
+    await delay(2000);
+    Taro.switchTab({ url: '/pages/index/index' });
   };
 
   return (

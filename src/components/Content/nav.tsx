@@ -14,7 +14,6 @@ const Nav = ({ show, type, color, style }) => {
     const { statusBarHeight = 0 } = Taro.getWindowInfo();
     setTopBarHeight(Taro.pxTransform(statusBarHeight));
   }, []);
-  console.log(color)
 
   return (
     <div style={{ backgroundColor: color === 'white' ? '#f5f5f5' : '#000', paddingTop: topBarHeight, ...style }}>

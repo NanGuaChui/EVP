@@ -3,8 +3,6 @@ import {} from '@tarojs/components';
 import { randomRange } from 'utils';
 import styles from './index.module.scss';
 
-console.log(styles);
-
 const data = Array.from({ length: 20 }).map((e, index) => {
   let tickerAmount = randomRange(0, 10000);
   return { key: index, tickerAmount };
