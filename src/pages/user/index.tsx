@@ -87,6 +87,7 @@ const User = () => {
           </div>
         </Form>
       </div>
+      <br />
     </Content>
   );
 };

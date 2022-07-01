@@ -15,7 +15,6 @@ const Content = ({
       <Nav show={showNav} type={navType} style={navStyle} />
       {children}
       {showTabBar && <TabBar />}
-      <br />
     </div>
   );
 };

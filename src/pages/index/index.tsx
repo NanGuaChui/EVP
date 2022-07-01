@@ -48,54 +48,56 @@ const Home = () => {
   };
 
   return (
-    <Content showNav={false}>
-      <div className={styles['logo']} style={{ background: '#5AD79D' }}>
-        <img className={styles['logo-img']} src={require('assets/images/logo-white.png')} />
-      </div>
-      <div className={styles['banner']}>
-        <div className={styles['banner-bg']}>
-          <p>德育人才</p>
-          <p style={{ textAlign: 'center' }}>勤创未来</p>
+    <Content showNav={false} style={{ background: '#5AD79D' }}>
+      <div style={{ background: '#f5f5f5', height: '100%' }}>
+        <div className={styles['logo']} style={{ background: '#5AD79D' }}>
+          <img className={styles['logo-img']} src={require('assets/images/logo-white.png')} />
         </div>
-        <div className={styles['language']}>
-          <div className={styles['language-dot']} style={{ left: languageDot }}></div>
-          <span
-            onClick={() => onChangeLanguage('zh')}
-            className={i18n.language === 'zh' ? styles['language-active'] : null}>
-            中文
-          </span>
-          <span className={styles['language-vertical']}></span>
-          <span
-            onClick={() => onChangeLanguage('en')}
-            className={i18n.language === 'en' ? styles['language-active'] : null}>
-            EN
-          </span>
-        </div>
-        <div className={styles['countdown']}>
-          <div className={styles['countdown-title']}>{t('home.countdown')}</div>
-          <div className={styles['countdown-time']}>
-            <span className={styles['span']}>{time.d}</span>天<span className={styles['span']}>{time.h}</span>时
-            <span className={styles['span']}>{time.m}</span>分<span className={styles['span']}>{time.s}</span>秒
+        <div className={styles['banner']}>
+          <div className={styles['banner-bg']}>
+            <p>德育人才</p>
+            <p style={{ textAlign: 'center' }}>勤创未来</p>
+          </div>
+          <div className={styles['language']}>
+            <div className={styles['language-dot']} style={{ left: languageDot }}></div>
+            <span
+              onClick={() => onChangeLanguage('zh')}
+              className={i18n.language === 'zh' ? styles['language-active'] : null}>
+              中文
+            </span>
+            <span className={styles['language-vertical']}></span>
+            <span
+              onClick={() => onChangeLanguage('en')}
+              className={i18n.language === 'en' ? styles['language-active'] : null}>
+              EN
+            </span>
+          </div>
+          <div className={styles['countdown']}>
+            <div className={styles['countdown-title']}>{t('home.countdown')}</div>
+            <div className={styles['countdown-time']}>
+              <span className={styles['span']}>{time.d}</span>天<span className={styles['span']}>{time.h}</span>时
+              <span className={styles['span']}>{time.m}</span>分<span className={styles['span']}>{time.s}</span>秒
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles['list']}>
-        <div className={styles['item']} onClick={() => onDetail(1)}>
-          <img className={styles['img']} src={require('assets/images/module-1.png')} alt='' />
-          <div className={styles['text']}>立即进入&gt;</div>
-        </div>
-        <div className={styles['item']} onClick={() => onDetail(2)}>
-          <img className={styles['img']} src={require('assets/images/module-2.png')} alt='' />
-          <div className={styles['text']}>立即进入&gt;</div>
-        </div>
-        <div className={styles['item']} onClick={() => onDetail(3)}>
-          <img className={styles['img']} src={require('assets/images/module-3.png')} alt='' />
-          <div className={styles['text']}>立即进入&gt;</div>
-        </div>
-        <div className={styles['item']} onClick={() => onDetail(4)}>
-          <img className={styles['img']} src={require('assets/images/module-4.png')} alt='' />
-          <div className={styles['text']}>立即进入&gt;</div>
+        <div className={styles['list']}>
+          <div className={styles['item']} onClick={() => onDetail(1)}>
+            <img className={styles['img']} src={require('assets/images/module-1.png')} alt='' />
+            <div className={styles['text']}>立即进入&gt;</div>
+          </div>
+          <div className={styles['item']} onClick={() => onDetail(2)}>
+            <img className={styles['img']} src={require('assets/images/module-2.png')} alt='' />
+            <div className={styles['text']}>立即进入&gt;</div>
+          </div>
+          <div className={styles['item']} onClick={() => onDetail(3)}>
+            <img className={styles['img']} src={require('assets/images/module-3.png')} alt='' />
+            <div className={styles['text']}>立即进入&gt;</div>
+          </div>
+          <div className={styles['item']} onClick={() => onDetail(4)}>
+            <img className={styles['img']} src={require('assets/images/module-4.png')} alt='' />
+            <div className={styles['text']}>立即进入&gt;</div>
+          </div>
         </div>
       </div>
     </Content>
