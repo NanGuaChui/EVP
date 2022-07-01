@@ -1,2 +1,141 @@
 .rankings {
+  .platform {
+    display: flex;
+    height: 322px;
+    padding: 0 15px;
+    background: url('../../../assets/images/ranking.png') no-repeat center;
+    background-size: 100% 100%;
+    .champion,
+    .runner-up,
+    .third {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: rgb(51 51 51 / 60%);
+      font-size: 16px;
+      .ticker-num {
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+    .champion {
+      padding-top: 99px;
+      .picture-frame {
+        width: 67px;
+        height: 90px;
+        padding: 25px 2.5px;
+        background: url('../../../assets/images/winner-1.png') no-repeat;
+        background-size: 100%;
+        .heat-img {
+          display: block;
+          margin-bottom: 28px;
+          height: 62px;
+          width: 62px;
+        }
+      }
+    }
+    .runner-up {
+      padding-top: 130px;
+      .picture-frame {
+        width: 62px;
+        height: 83px;
+        padding: 23.5px 2.5px;
+        background: url('../../../assets/images/winner-2.png') no-repeat;
+        background-size: 100%;
+        .heat-img {
+          display: block;
+          margin-bottom: 29px;
+          height: 57px;
+          width: 57px;
+        }
+      }
+    }
+    .third {
+      padding-top: 136px;
+      .picture-frame {
+        width: 61px;
+        height: 81px;
+        padding: 22px 2.5px 22px 1.5px;
+        background: url('../../../assets/images/winner-1.png') no-repeat;
+        background-size: 100%;
+        .heat-img {
+          display: block;
+          margin-bottom: 25px;
+          height: 57px;
+          width: 57px;
+        }
+      }
+    }
+  }
+}
+
+.list {
+  margin-top: 18px;
+  padding: 0 15px;
+  .table {
+    border-radius: 8px;
+    background-color: #fff;
+    width: 100%;
+    padding: 15px;
+    .head {
+      display: flex;
+      font-size: 14px;
+      line-height: 20px;
+      color: #978686;
+      .table-th {
+        display: block;
+        &:nth-child(1) {
+          width: 60px;
+        }
+        &:nth-child(2) {
+          flex: 1;
+        }
+        &:nth-child(3) {
+          text-align: right;
+          width: 80px;
+        }
+      }
+    }
+
+    .body {
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 20px;
+      display: flex;
+      .table-td {
+        display: flex;
+        align-items: center;
+        color: #101010;
+        &:nth-child(1) {
+          width: 60px;
+        }
+        &:nth-child(2) {
+          flex: 1;
+        }
+        &:nth-child(3) {
+          justify-content: flex-end;
+          width: 80px;
+          color: #007aff;
+          font-size: 14px;
+        }
+        .img {
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+        }
+        .av {
+          display: inline-block;
+          margin-right: 3px;
+          width: 32px;
+          height: 32px;
+        }
+        .serial {
+          display: inline-block;
+          width: 32px;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
